@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <label class="switch">
+      <input type="checkbox" id="themeButton">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <div class="gameContainer" id="labelContainer" style="display: flex;">
+    <h1>Jogo da Velha</h1>
+    <label for="difficulty">Dois Jogadores:</label>
+    <div class="inputContainer">
+      <label for="player1">X</label>
+      <input type="text" id="player1" placeholder="Nome do Jogador 1">
+      <label for="player2">O</label>
+      <input type="text" id="player2" placeholder="Nome do Jogador 2">
+      <button id="start">Começar ▶︎</button>
+      <h1>Jogar Contra IA</h1>
+      <label for="difficulty">Dificuldade:</label>
+      <select id="difficulty">
+        <option value="easy">Fácil</option>
+        <option value="medium">Médio</option>
+        <option value="hard">Difícil</option>
+      </select>
+      <button id="playWithAI">Jogar contra IA 🤖</button>
+    </div>
+    <h3 id="sameName" style="display: none; color: red; text-align: center;">Os nomes dos jogadores devem ser diferentes</h3>
+    <h3 id="noName" style="display: none; color: red; text-align: center;">Preencha os nomes dos jogadores</h3>
+  </div>
+  
+  <div class="gameContainer" id="boardContainer" style="display: none;">
+    <h2>Vez de: <span id="turnPlayer"></span></h2>
+    <section id="gameBoard">
+      <div class="cursor-pointer" data-region="0.0"></div>
+      <div class="cursor-pointer" data-region="0.1"></div>
+      <div class="cursor-pointer" data-region="0.2"></div>
+      <div class="cursor-pointer" data-region="1.0"></div>
+      <div class="cursor-pointer" data-region="1.1"></div>
+      <div class="cursor-pointer" data-region="1.2"></div>
+      <div class="cursor-pointer" data-region="2.0"></div>
+      <div class="cursor-pointer" data-region="2.1"></div>
+      <div class="cursor-pointer" data-region="2.2"></div>
+    </section>
+    <div class="buttonContainer">
+      <button id="restart">Recomeçar ↻</button>
+      <button id="refresh">Mudar Jogadores ↩</button>
+    </div>
+  </div>
+  
+</body>
+</html>

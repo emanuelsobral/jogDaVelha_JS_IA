@@ -1,0 +1,218 @@
+:root{
+    --backgroung: #EEEEEE;
+    --textColor: #222831;
+    --inputColors : #FFF;
+    --winCOlor: #00ADB5;
+    --midColor: #393E46;
+  }
+  
+  :root .darkMode{
+    --backgroung:#222831;
+    --textColor: #EEEEEE;
+    --winCOlor: #00ADB5;
+    --midColor: #393E46;
+  }
+  
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  body {
+      font-family: sans-serif;
+      background: var(--backgroung);
+      color: var(--textColor);
+  }
+  
+  header{
+      width: 100%;
+      height: 40px;
+      display: grid;
+      justify-content: end;
+      position: fixed;
+  }
+  
+  .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-right: 40px;
+  }
+  
+  .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+  
+  .inputContainer{
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+  }
+  
+  .slider {
+      border-radius: 20px;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+  }
+  
+  .slider:before {
+      position: absolute;
+      content: "";
+      border-radius: 20px;
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+  }
+  
+  input:checked + .slider {
+      background-color: var(--winCOlor);
+  }
+  
+  input:focus + .slider {
+      box-shadow: 0 0 1px var(--winCOlor);
+  }
+  
+  input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+  }
+  
+  #turnplayer {
+      font-size: 2rem;
+      margin: 1rem;
+  }
+  
+  .gameContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  }
+  
+  #gameBoard {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+      gap: 1rem;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+  }
+  
+  #gameBoard div {
+      border-radius: 20px;
+      width: 2em;
+      height: 2em;
+      color: var(--inputColors);
+      background-color: var(--midColor);
+      display: grid;
+      place-content: center;
+      font-size: 5rem;
+  }
+  
+  #gameBoard div.win {
+      background-color: var(--winCOlor);
+  }
+  
+  .cursor-pointer {
+      cursor: pointer;
+  }
+  
+  .buttonContainer{
+      display: flex;
+  }
+  
+  button {
+      width: 200px;
+      height: 40px;
+      border-radius: 20px;
+      border: none;
+      background-color: var(--midColor);
+      cursor: pointer;
+      margin: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--inputColors);
+  }
+  
+  label{
+      font-size: 1.5rem;
+  }
+  
+  input[type="text"], select {
+      text-align: center;
+      width: 200px;
+      height: 40px;
+      border-radius: 20px;
+      border: none;
+      background-color: var(--midColor);
+      color: var(--inputColors);
+      cursor: pointer;
+      margin: 0.5rem;
+      font-size: 1rem;
+  }
+  
+  button:hover {
+      transition: .5s;
+      background-color: var(--winCOlor);
+      color: var(--inputColors);
+  }
+  
+  @media screen and (max-width : 768px) {
+  
+      .inputContainer{
+        display: grid;
+        justify-items: center;
+      }
+  
+      .buttonContainer{
+        display: grid;
+        justify-items: center;
+      }
+  
+      #gameBoard {
+        gap: 0.5rem;
+      }
+  
+      #gameBoard div {
+          width : 6rem; 
+          height : 6rem; 
+          font-size : 3rem; 
+      }
+      
+      button, input[type="text"], select {
+          width : 250px; 
+          height : 40px; 
+          font-size : 1rem; 
+      }
+      
+      label{
+          font-size : 1.2rem; 
+      }
+      
+      #turnplayer {
+          font-size : 1.5rem; 
+      }
+  }
+  
