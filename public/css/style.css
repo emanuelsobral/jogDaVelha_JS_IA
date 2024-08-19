@@ -32,6 +32,7 @@
       display: grid;
       justify-content: end;
       position: fixed;
+      margin: 10px;
   }
   
   .switch {
