@@ -13,7 +13,13 @@
     "dotenv": "^16.4.5",
     "express": "^4.17.1",
     "firebase": "^10.13.0",
-    "seu-projeto": "file:"
+    "seu-projeto": "file:",
+    "vite": "^5.4.1"
   },
-  "proxy": "https://api.google.dev"
+  "proxy": "https://api.google.dev",
+  "devDependencies": {
+    "dotenv-webpack": "^8.1.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
