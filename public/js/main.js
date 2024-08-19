@@ -3,14 +3,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// Load environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAJESc7MufZetZfsbu7EjxFnQY5RuICCik",
-  authDomain: "jogdavelhajs.firebaseapp.com",
-  projectId: "jogdavelhajs",
-  storageBucket: "jogdavelhajs.appspot.com",
-  messagingSenderId: "74698277411",
-  appId: "1:74698277411:web:a58c1f1777c82ad2322796"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 // Initialize Firebase
@@ -206,7 +210,7 @@ function enableBoard() {
 
 function startGameWithAI() {
     playWithAI = true;
-    player2.value = 'GEMINI-IA'; 
+    player2.value = 'IA'; 
     initializeGame();
 }
 
@@ -301,7 +305,7 @@ document.getElementById('refresh').addEventListener('click', function () {
 });
 document.getElementById('playWithAI').addEventListener('click', function () {
     playWithAI = true;
-    player2.value = 'GEMINI-IA'
+    player2.value = 'IA'
     console.log('playWithAI definido como true');
     initializeGame();
 });
