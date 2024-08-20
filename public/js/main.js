@@ -1,18 +1,29 @@
-const fetchData = async () => {
-    try {
-        const response = await fetch('http://localhost:3000/data', {
-            mode: 'cors'
-        });
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.error('Erro ao buscar dados:', error);
-    }
-};
+document.getElementById('localPlayersButton').addEventListener('click', function() {
+    document.getElementById('localPlayers').style.display = 'flex';
+    document.getElementById('aiPlayers').style.display = 'none';
+    document.getElementById('localPlayersButton').style.display = 'none';
+    document.getElementById('aiButton').style.display = 'none';
+  });
 
-document.addEventListener('DOMContentLoaded', fetchData);
+  document.getElementById('aiButton').addEventListener('click', function() {
+    document.getElementById('localPlayers').style.display = 'none';
+    document.getElementById('aiPlayers').style.display = 'flex';
+    document.getElementById('localPlayersButton').style.display = 'none';
+    document.getElementById('aiButton').style.display = 'none';
+  });
 
-// Restante do código do cliente
+  document.getElementById('backToMenu1').addEventListener('click', function() {
+    document.getElementById('localPlayers').style.display = 'none';
+    document.getElementById('localPlayersButton').style.display = 'block';
+    document.getElementById('aiButton').style.display = 'block';
+  });
+
+  document.getElementById('backToMenu2').addEventListener('click', function() {
+    document.getElementById('aiPlayers').style.display = 'none';
+    document.getElementById('localPlayersButton').style.display = 'block';
+    document.getElementById('aiButton').style.display = 'block';
+  });
+
 const board = document.querySelectorAll('#gameBoard div');
 let vBoard = [];
 let turnPlayer = '';
@@ -23,6 +34,7 @@ const boardContainer = document.getElementById('boardContainer');
 
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
+const player1Ia = document.getElementById('player1Ia');
 const difficultySelect = document.getElementById('difficulty');
 
 const themeButton = document.getElementById('themeButton');
@@ -52,17 +64,27 @@ function updateTittle() {
 
 function initializeGame() {
     console.log('initializeGame chamada');
-    if (player1.value === '' || (player2.value === '' && !playWithAI)) {
-        document.getElementById('noName').style.display = 'block';
-        document.getElementById('sameName').style.display = 'none';
-        return;
+    
+    if (playWithAI) {
+        if (player1Ia.value === '') {
+            document.getElementById('noName').style.display = 'block';
+            document.getElementById('sameName').style.display = 'none';
+            return;
+        }
+    } else {
+        if (player1.value === '' || player2.value === '') {
+            document.getElementById('noName').style.display = 'block';
+            document.getElementById('sameName').style.display = 'none';
+            return;
+        }
+        if (player1.value === player2.value) {
+            document.getElementById('sameName').style.display = 'block';
+            document.getElementById('noName').style.display = 'none';
+            return;
+        }
     }
-    if (player1.value === player2.value && !playWithAI) {
-        document.getElementById('sameName').style.display = 'block';
-        document.getElementById('noName').style.display = 'none';
-        return;
-    }
-    if (player1.value !== '' && (player2.value !== '' || playWithAI)) {
+
+    if ((player1.value !== '' && player2.value !== '') || (playWithAI && player1Ia.value !== '')) {
         labelContainer.style.display = 'none';
         boardContainer.style.display = 'flex';
         vBoard = [["","",""], ["","",""], ["","",""]];

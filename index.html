@@ -18,14 +18,19 @@
 
   <div class="gameContainer" id="labelContainer" style="display: flex;">
     <h1>Jogo da Velha</h1>
-    <label for="difficulty">Dois Jogadores:</label>
-    <div class="inputContainer">
+    <button id="localPlayersButton">2 Jogadores Locais</button>
+    <button id="aiButton">Jogar contra IA</button>
+    <div class="inputContainer" id="localPlayers" style="display: none;">
       <label for="player1">X</label>
       <input type="text" id="player1" placeholder="Nome do Jogador 1">
       <label for="player2">O</label>
       <input type="text" id="player2" placeholder="Nome do Jogador 2">
       <button id="start">Começar ▶︎</button>
-      <h1>Jogar Contra IA</h1>
+      <button id="backToMenu1">Voltar ao Menu</button>
+    </div>
+    <div class="inputContainer" id="aiPlayers" style="display: none;">
+      <label for="player1Ia">Nome do Jogador:</label>
+      <input type="text" id="player1Ia" placeholder="Nome do Jogador 1">
       <label for="difficulty">Dificuldade:</label>
       <select id="difficulty">
         <option value="easy">Fácil</option>
@@ -33,6 +38,7 @@
         <option value="hard">Difícil</option>
       </select>
       <button id="playWithAI">Jogar contra IA 🤖</button>
+      <button id="backToMenu2">Voltar ao Menu</button>
     </div>
     <h3 id="sameName" style="display: none; color: red; text-align: center;">Os nomes dos jogadores devem ser diferentes</h3>
     <h3 id="noName" style="display: none; color: red; text-align: center;">Preencha os nomes dos jogadores</h3>
@@ -56,7 +62,6 @@
       <button id="refresh">Mudar Jogadores ↩</button>
     </div>
   </div>
-  
 
   <script type="module" src="/public/js/main.js" defer></script>
 </body>
