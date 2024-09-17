@@ -8,19 +8,21 @@ Este projeto é um jogo da velha simples implementado em HTML, CSS e JavaScript.
 - **Jogabilidade**: Os jogadores se revezam para marcar os espaços no tabuleiro do jogo. O jogador que conseguir alinhar três de suas marcas primeiro, seja na horizontal, vertical ou diagonal, vence o jogo.
 - **Reiniciar o jogo**: A qualquer momento durante o jogo, os jogadores podem optar por reiniciar o jogo clicando no botão "Recomeçar". Isso limpará o tabuleiro do jogo, mas manterá os nomes dos jogadores.
 - **Mudar jogadores**: Se os jogadores quiserem mudar seus nomes, eles podem fazer isso clicando no botão "Mudar Jogadores". Isso levará os usuários de volta à tela inicial onde eles podem inserir novos nomes.
+- **Jogar contra a IA**: Agora é possível jogar contra uma inteligência artificial. Os jogadores podem escolher a dificuldade do jogo (fácil, médio, difícil) antes de iniciar a partida.
 
 ## 🚀 Como usar
 
 1. Abra o arquivo `index.html` em seu navegador.
 2. Insira os nomes dos jogadores nos campos de entrada correspondentes.
-3. Clique em "Começar" para iniciar o jogo.
-4. Clique em um espaço vazio no tabuleiro do jogo para fazer sua jogada.
-5. Continue até que um jogador ganhe ou até que não haja mais movimentos possíveis (empate).
-6. Você pode clicar em "Recomeçar" a qualquer momento para reiniciar o jogo ou em "Mudar Jogadores" para voltar à tela inicial e inserir novos nomes de jogadores.
+3. Se desejar jogar contra a IA, selecione a dificuldade desejada.
+4. Clique em "Começar" para iniciar o jogo.
+5. Clique em um espaço vazio no tabuleiro do jogo para fazer sua jogada.
+6. Continue até que um jogador ganhe ou até que não haja mais movimentos possíveis (empate).
+7. Você pode clicar em "Recomeçar" a qualquer momento para reiniciar o jogo ou em "Mudar Jogadores" para voltar à tela inicial e inserir novos nomes de jogadores.
 
 ## 🌐 Visualização ao vivo
 
-Você pode ver este projeto ao vivo [aqui](https://emanuelsobral.github.io/jogDaVelha_JS/).
+Você pode ver este projeto ao vivo aqui.
 
 ## 🤝 Contribuindo
 
