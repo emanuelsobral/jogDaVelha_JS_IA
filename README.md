@@ -22,7 +22,7 @@ Este projeto é um jogo da velha simples implementado em HTML, CSS e JavaScript.
 
 ## 🌐 Visualização ao vivo
 
-Você pode ver este projeto ao vivo aqui.
+Você pode ver este projeto ao vivo [aqui](https://emanuelsobral.github.io/jogDaVelha_JS_IA/).
 
 ## 🤝 Contribuindo
 
